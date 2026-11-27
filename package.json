@@ -4,8 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "tsx watch server.ts", 
+    "test": "jest",
+    "dev": "tsx watch server.ts",
     "build": "tsc",
     "start": "node dist/server.ts"
   },
@@ -19,11 +19,15 @@
     "express": "^5.3.0"
   },
   "devDependencies": {
+    "@eslint/js": "^10.0.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
     "@types/node": "^26.6.5",
+    "eslint": "^10.15.0",
+    "globals": "^17.14.0",
     "nodemon": "^3.1.14",
     "tsx": "^4.23.15",
-    "typescript": "^7.0.2"
+    "typescript": "^7.0.2",
+    "typescript-eslint": "^8.74.0"
   }
 }

@@ -1,0 +1,20 @@
+name: Pipeline de Calidad Express
+on: [push, pull_request]
+
+jobs:
+  auditoria-y-pruebas:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Configurar Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - name: Instalar dependencias
+        run: npm ci
+      - name: 1. Análisis Estático (ESLint)
+        run: npx eslint .
+      - name: 2. Auditoría de Vulnerabilidades NPM
+        run: npm audit --audit-level=high
+      - name: 3. Ejecutar Pruebas Jest
+        run: npm test
