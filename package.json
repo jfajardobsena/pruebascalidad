@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "dev": "tsx watch server.ts",
     "build": "tsc",
     "start": "node dist/server.ts"
@@ -22,11 +22,14 @@
     "@eslint/js": "^10.0.1",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.6",
+    "@types/jest": "^30.0.0",
     "@types/node": "^26.6.5",
     "eslint": "^10.15.0",
     "globals": "^17.14.0",
+    "jest": "^30.5.2",
     "jiti": "^2.7.0",
-    "nodemon": "^3.1.14",
+    "nodemon": "^3.1.11",
+    "ts-jest": "^29.4.15",
     "tsx": "^4.23.15",
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.74.0"
