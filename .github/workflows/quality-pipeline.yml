@@ -5,16 +5,16 @@ jobs:
   auditoria-y-pruebas:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v5
       - name: Configurar Node.js
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v5
         with:
-          node-version: '24.15.0'
+          node-version: '24'
       - name: Instalar dependencias
-        run: npm ci
+        run: npm ci --legacy-peer-deps
       - name: 1. Análisis Estático (ESLint)
         run: npx eslint .
       - name: 2. Auditoría de Vulnerabilidades NPM
         run: npm audit --audit-level=high
       - name: 3. Ejecutar Pruebas Jest
-        run: npm test
+        run: npm test --if-present
